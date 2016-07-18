@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * ForgeOnline
+ *
+ * NOTICE OF LICENSE
+ *
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    ForgeOnline
+ * @package     Forge_Paymentmethodtest
+ * @copyright   Copyright (c) 2014 Forge. (http://www.forge.co.nz)
+ * @license     http://www.forge.co.nz
+ */
+-->
+<config>
+	
+    <modules>
+        <Forge_Acumen>
+            <version>1.0.0.0</version>
+        </Forge_Acumen>
+    </modules>
+
+
+	<!--- GLOBAL -->
+    <global>
+		<events>
+			<payment_method_is_active>
+				<observers>
+					<paymentfilter_payment_method_is_active>
+						<type>singleton</type>
+						<class>Forge_Paymentmethodtest_Model_Observer</class>
+						<method>paymentMethodFilter</method>
+					</paymentfilter_payment_method_is_active>
+				</observers>
+			</payment_method_is_active>
+	  	</events>
+	</global>
+</config>
